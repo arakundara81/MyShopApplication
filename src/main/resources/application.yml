@@ -1,0 +1,33 @@
+spring :
+  application :
+    name : MyShopApplication
+
+product-catalog:
+  products:
+    - productId : 12345670
+      productName: laptop
+      price: 1000.0
+    - productId : 12345671
+      productName: pc
+      price : 2000.0
+    - productId : 12345672
+      productName: mouse
+      price: 340.0
+    - productId : 12345673
+      productName: display screen
+      price: 500.50
+    - productId : 12345674
+      productName: keyboard
+      price: 400.0
+    - productId : 12345675
+      productName: printer
+      price: 1500.0
+
+
+  admins:
+    - id: 12345
+      name: system-admin
+      role: ADMIN
+      contactMethods:
+        - methodType:  EMAIL
+          methodValue: admin@test.com
