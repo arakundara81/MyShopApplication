@@ -15,12 +15,20 @@ The client is stored in the system with a REGULAR role and is not authenticated 
 The client performs authentication using a contact method such as email or phone.  
 If the provided details match one of the stored contact methods, the client is marked as authenticated.
 
-### 3. Purchase Product
+
+### 3. Logout Client
+
+An authenticated client can log out from the system using the logout endpoint,
+and they can no longer access secured operations.
+If the client is not authenticated, the request will be rejected with 401 Unauthorized.
+
+
+### 4. Purchase Product
 Only an authenticated client with a REGULAR role can purchase a product.  
 Before the purchase, authorization is validated using the AuthService.  
 If everything is valid, the product is added to the client’s list of purchased products.
 
-### 4. Product Management (Admin)
+### 5. Product Management (Admin)
 An admin can:
 - Add products to the catalog
 - Update existing products
@@ -28,14 +36,15 @@ An admin can:
 
 All these actions require ADMIN privileges.
 
-### 5. Client Management (Admin)
+### 6. Client Management (Admin)
 An admin can:
 - Delete a client from the system
 - Remove purchased products from a client ()
 
-### 6. View Data
+### 7. View Data
 - A client can view their purchased products  
 - An admin can retrieve all clients along with their purchased products  
+
 
 ---
 
