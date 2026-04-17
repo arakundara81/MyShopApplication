@@ -42,4 +42,15 @@ public class AuthService {
 
     }
 
+    public void logout(Long clientId) {
+        Client client = clientService.getClientById(clientId);
+        if(!client.isAuthenticated()) {
+            throw new GenericException("You are not allowed because you are not logged in " , HttpStatus.UNAUTHORIZED);
+        }
+
+        client.setAuthenticated(false);
+
+
+
+    }
 }

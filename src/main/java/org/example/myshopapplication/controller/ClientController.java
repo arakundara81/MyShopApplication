@@ -174,4 +174,20 @@ public class ClientController {
     }
 
 
+    @Operation(
+            summary = "Logout client",
+            description = "Logs out a client if they are authenticated. If the client is not authenticated, returns 401 Unauthorized."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Logged out successfully"),
+            @ApiResponse(responseCode = "401", description = "Client is not authenticated"),
+            @ApiResponse(responseCode = "404", description = "Client not found")
+    })
+    @PostMapping("/logout")
+    public ResponseEntity<String> logout(@RequestParam Long clientId) {
+        authService.logout(clientId);
+        return ResponseEntity.ok("Logged out successfully");
+    }
+
+
 }
