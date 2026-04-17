@@ -43,17 +43,4 @@ public class ContactMethodValidator implements ConstraintValidator<ValidContactM
         return true;
     }
 
-    private String generateErrorMessageForNullValue(ContactMethod contactMethodElement) {
-
-        if(contactMethodElement.getMethodType() == null && Strings.isBlank(contactMethodElement.getMethodValue())) {
-            return "methodType and methodValue must be populated";
-        }
-        if(contactMethodElement.getMethodType() == null) {
-            return "methodType must be populated";
-        }
-        if(Strings.isBlank(contactMethodElement.getMethodValue())) {
-            return "methodValue must be populated";
-        }
-        return null;
-    }
 }
